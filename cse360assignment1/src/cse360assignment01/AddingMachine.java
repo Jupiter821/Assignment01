@@ -15,27 +15,35 @@ public class AddingMachine {
 
 	public int getTotal()
 	{
-		return 0;
+		return total;
 	}
 
 	public void add(int value)
 	{
-	
+		total = total + value;
 	}
 
 	public void subtract (int value)
 	{
-	
+		total = total - value;
 	}
 
 	public String toString()
 	{
+		System.out.println(getTotal());
+		add(4);
+		System.out.println(" + " + getTotal());
+		subtract(2);
+		System.out.println(" - " + getTotal());
+		add(5);
+		System.out.println(" + " + getTotal());
+		clear();
 		return "";
 	}
 
 	public void clear()
 	{
-	
+		total = 0;
 	}
 
 }
