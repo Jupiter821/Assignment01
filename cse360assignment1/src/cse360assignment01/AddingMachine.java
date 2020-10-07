@@ -7,43 +7,45 @@ package cse360assignment01;
 
 public class AddingMachine {
 	private int total;
+	String history;
 
+	//constructor
+	//initializes total to 0
 	public AddingMachine() 
 	{	
 		total = 0; //not needed - included for clarity
+		history = "0";
 	}
 
-	public int getTotal()
+	//returns total
+	public int getTotal() 
 	{
 		return total;
 	}
 
+	//adds value to total 
 	public void add(int value)
 	{
 		total = total + value;
+		history = history + " + " + value;
 	}
 
+	//subtracts value from total
 	public void subtract (int value)
 	{
 		total = total - value;
+		history = history + " - " + value;
 	}
 
+	//returns concatenated string of operations and values
 	public String toString()
 	{
-		System.out.println(getTotal());
-		add(4);
-		System.out.println(" + " + getTotal());
-		subtract(2);
-		System.out.println(" - " + getTotal());
-		add(5);
-		System.out.println(" + " + getTotal());
-		clear();
-		return "";
+		return history;
 	}
 
+	//sets total back to zero
 	public void clear()
 	{
 		total = 0;
 	}
-
 }
